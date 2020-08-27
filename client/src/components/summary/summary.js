@@ -1,6 +1,7 @@
 import React from "react";
 
 const Summary =(props)=>{
+    console.log("hey there")
     console.log(props.item)
     return(
     <div>
@@ -9,12 +10,13 @@ const Summary =(props)=>{
     <h1>Summary</h1>
     </div>
 
-    <ul>
-    <li>
-        {props.item}
-    </li>
+    {/* <ul>
+        {props.item.map(ite => (
+          <li>{props.ite.title}
+        </li>)
+        )}
 
-    </ul>
+    </ul>  */}
     </div>)
 };
 

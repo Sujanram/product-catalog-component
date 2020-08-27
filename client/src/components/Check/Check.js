@@ -1,7 +1,20 @@
-import React from "react";
+import React,{useState} from "react";
+
 import Summary from "../summary/summary"
 
 const Check = (props) => {
+
+    const [cartItem, setCartItem] = useState(1);
+
+    const increamentitem=()=>{
+        setCartItem(cartItem+1)
+    }
+
+    const decreamentitem=()=>{
+        if(cartItem>=1){
+        setCartItem(cartItem-1)
+        }
+    }
  
 console.log(props)
     return (
@@ -28,10 +41,10 @@ console.log(props)
                                <p className="btn btn-danger "> $ {props.item.price} </p>
                            </div>
                            <div className="col">
-                          <button className="btn btn-danger " onClick= {()=>props.ondecritem1()}><span> - </span></button>
-                            <span> {props.value1} </span>  
+                          <button className="btn btn-danger " onClick= {()=>decreamentitem()}><span> - </span></button>
+                            <span> {cartItem} </span>  
                               <button 
-                               onClick= {()=>props.onincritem1()} 
+                               onClick= {()=>increamentitem()} 
                                className="btn btn-success">
                                    +
                                </button>
@@ -39,7 +52,7 @@ console.log(props)
                            </div>
                            <div className="col">
 
-                                <span> {props.item.price * props.value1}</span>
+                                <span> {props.item.price * cartItem}</span>
                                   
                                </div>
                        </div>

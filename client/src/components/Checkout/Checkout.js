@@ -8,22 +8,22 @@ const Checkout = (props)=>{
 
     return(<div>
             <div class="alert alert-success" role="alert" style={{text_align: "center"}}>
-               <h2>Checkout</h2>
+               <h2>Your cart</h2>
             </div>
 
          <ul>
         {props.items.map(item => (
           <Check item = {item} 
-          onincritem1={()=>props.onincritem()} 
-          ondecritem1={()=>props.ondecritem()} 
-          value1={props.value}
+         //  onincritem1={()=>props.onincritem()} 
+         //  ondecritem1={()=>props.ondecritem()} 
+         //  value1={props.item.value}
          />
 
        
           )
         )}
 
-        <Summary item={props.item} />
+        <Summary item={props.items} value2={props.value}/>
 
 
       </ul>

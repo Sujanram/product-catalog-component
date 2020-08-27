@@ -21,7 +21,8 @@ const App = () => {
     const [activeCategory, setActiveCategory] = useState("Wyatt Residency");
     const [activeFilter, setActiveFilter] = useState("random");
     const [checkout,setCheckout] = useState([]);
-    const [cartItem, setCartItem] = useState(1);
+    // const [cartItem, setCartItem] = useState(1);
+
 
     // const [checkprod,setCheckprod]= useState("");
 
@@ -104,13 +105,15 @@ const App = () => {
         // console.log(checkout);
     }
 
-    const increamentitem=()=>{
-        setCartItem(cartItem+1)
-    }
+    // const increamentitem=()=>{
+    //     setCartItem(cartItem+1)
+    // }
 
-    const decreamentitem=()=>{
-        setCartItem(cartItem-1)
-    }
+    // const decreamentitem=()=>{
+    //     if(cartItem>=1){
+    //     setCartItem(cartItem-1)
+    //     }
+    // }
 
     return (
         <Router >
@@ -118,14 +121,15 @@ const App = () => {
             <Navbar 
             cartNumber={cartNo}
             onClickproduct={() =>showproduct() }
-             
+             cartItems= {checkout}
             />
             
             <Route path="/checkout" exact component={() => <Checkout 
             items={checkout}
-            value={cartItem}
-            onincritem={()=>increamentitem()}
-            ondecritem={()=>decreamentitem()} title={checkout }/>} />
+            // value={cartItem}
+            // onincritem={()=>increamentitem()}
+            // ondecritem={()=>decreamentitem()} 
+            title={checkout }/>} />
 
             {/* <Route path="/" exact component={() => <Checkout {...checkout} title={checkout }/>} /> */}
 
@@ -236,6 +240,8 @@ const App = () => {
             </div>
             <br />
             <br />
+
+           
   
         </Router>
 
